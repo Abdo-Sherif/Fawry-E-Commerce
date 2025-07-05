@@ -64,7 +64,7 @@ Product tv = new ShippableProduct("TV", 5000.0, 3, 15000.0);
 Product scratchCard = new Product("Mobile Scratch Card", 50.0, 20);
 
 // Create customer
-Customer customer = new Customer(1000.0);
+Customer customer = new Customer(6000.0);
 
 // Create cart and add items
 Cart cart = new Cart();
@@ -93,79 +93,5 @@ Total package weight 15.8kg
 Subtotal	5150
 Shipping	474
 Amount	5624
-Remaining Balance	-4624
+Remaining Balance	376
 ```
-
-## Running the System
-
-### Prerequisites
-- Java 17 or higher
-- Maven 3.6 or higher
-
-### Build and Run
-
-```bash
-# Build the project
-mvn clean compile
-
-# Run the main application
-mvn exec:java -Dexec.mainClass="org.ecommerce.Main"
-
-# Run tests
-mvn test
-```
-
-## Testing
-
-The system includes comprehensive unit tests covering:
-
-- Product creation and validation
-- Cart operations
-- Checkout processes
-- Error scenarios
-- Edge cases
-
-Run tests with:
-```bash
-mvn test
-```
-
-## Design Patterns Used
-
-1. **Strategy Pattern**: Different product types implement different interfaces
-2. **Service Layer Pattern**: Business logic separated into service classes
-3. **Optional Pattern**: Safe handling of optional product capabilities
-4. **Exception Handling**: Comprehensive error management
-
-## Assumptions
-
-1. **Shipping Rate**: Fixed rate of 30 currency units per kg
-2. **Weight Units**: Product weights stored in grams, displayed in grams and kg
-3. **Currency**: All prices in the same currency unit
-4. **Date Handling**: Uses system current date for expiration checks
-5. **Inventory**: Inventory is reduced immediately upon successful checkout
-
-## Future Enhancements
-
-1. **Database Integration**: Persistent storage for products and customers
-2. **User Authentication**: Customer login and session management
-3. **Payment Gateway**: Integration with external payment systems
-4. **Discount System**: Coupon codes and promotional pricing
-5. **Order History**: Track customer order history
-6. **Inventory Management**: Advanced stock management features
-7. **Shipping Providers**: Multiple shipping service integrations
-8. **Product Categories**: Organized product catalog
-9. **Reviews and Ratings**: Customer feedback system
-10. **Multi-language Support**: Internationalization
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License. 
