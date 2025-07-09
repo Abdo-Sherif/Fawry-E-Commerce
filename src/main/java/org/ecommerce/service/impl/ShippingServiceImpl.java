@@ -23,7 +23,7 @@ public class ShippingServiceImpl implements ShippingService {
 
         System.out.println("** Shipment notice **");
         for (CartItem item : shippableItems) {
-            Shippable shippableProduct = (Shippable) item.getProduct();
+            Shippable shippableProduct = item.getProduct().getShippableInfo().get();
             System.out.println(item.getQuantity() + "x " + shippableProduct.getName() + "\t" + shippableProduct.getWeight() * item.getQuantity() + "g");
         }
 
@@ -34,7 +34,7 @@ public class ShippingServiceImpl implements ShippingService {
     private double calculateTotalWeight(List<CartItem> shippableItems) {
         double totalWeight = 0.0;
         for (CartItem item : shippableItems) {
-            Shippable shippableProduct = (Shippable) item.getProduct();
+            Shippable shippableProduct = item.getProduct().getShippableInfo().get();
             totalWeight += shippableProduct.getWeight() * item.getQuantity();
         }
         return totalWeight;

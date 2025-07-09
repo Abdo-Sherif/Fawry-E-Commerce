@@ -4,27 +4,17 @@ import org.ecommerce.product.Product;
 
 import java.util.Optional;
 
-public class ShippableProduct extends Product implements Shippable {
+public class ShippableProduct extends Product {
 
-    private final double weight;
+    private final ShippableInfo shippableInfo;
 
     public ShippableProduct(String name, double price, int quantity, double weight) {
         super(name, price, quantity);
-        this.weight = weight;
-    }
-
-    @Override
-    public String getName() {
-        return super.getName();
-    }
-
-    @Override
-    public double getWeight() {
-        return weight;
+        shippableInfo = new ShippableInfo(weight, name);
     }
 
     @Override
     public Optional<Shippable> getShippableInfo() {
-        return Optional.of(this);
+        return Optional.of(shippableInfo);
     }
 }
