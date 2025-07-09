@@ -34,7 +34,7 @@ public class Main {
     }
 
     private static Product createShippableExpirableProduct() {
-        return new ShippableExpirableProduct("cheese", 100, 5, LocalDate.of(2025, 7, 7), 200);
+        return new ShippableExpirableProduct("cheese", 100, 5, LocalDate.now(), 200);
     }
 
     private static Product createShippableProduct() {
@@ -42,7 +42,7 @@ public class Main {
     }
 
     private static Product createExpirableProduct() {
-        return new ExpirableProduct("biscuits", 150, 5, LocalDate.of(2025, 7, 7));
+        return new ExpirableProduct("biscuits", 150, 5, LocalDate.now());
     }
 
     private static Cart fillShoppingCart(Map<Product, Integer> cartItems) {
